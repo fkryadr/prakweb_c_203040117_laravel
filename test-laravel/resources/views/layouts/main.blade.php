@@ -15,7 +15,7 @@
 
     @include('partials.navbar')
 
-<div class="text-3xl font-bold underline container m-4">
+<div class="text-3xl container m-4">
     @yield('container')
 </div>
 
