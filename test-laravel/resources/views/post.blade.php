@@ -3,7 +3,7 @@
 @section('container')
     <article>
     <h2 class="font-bold my-4">{{ $post->title }}</h2>
-    <h5 class="font-bold my-4">{{$post["author"]}}</h5>
+    <p class="my-4">By. Bel's kennedy in <a class="underline" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
         {!! $post->body !!}
     </article>
 

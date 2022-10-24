@@ -35,3 +35,10 @@ Route::get('/blog', [PostController::class, 'index']);
 // Halaman Single Post
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
+Route::get('/categories{category:slug}', function (\App\Models\Category $category) {
+    return view('categories', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name,
+    ]);
+});
