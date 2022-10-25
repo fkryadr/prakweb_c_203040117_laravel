@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Http\Controllers\PostController;
 
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,8 +37,15 @@ Route::get('/blog', [PostController::class, 'index']);
 // Halaman Single Post
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
-Route::get('/categories{category:slug}', function (\App\Models\Category $category) {
+route::get('categories', function () {
     return view('categories', [
+        'title' => 'Post Categories',
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/categories/{category:slug}', function (\App\Models\Category $category) {
+    return view('category', [
         'title' => $category->name,
         'posts' => $category->posts,
         'category' => $category->name,
