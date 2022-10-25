@@ -6,10 +6,13 @@
     <h1 class="font-bold">Ini Halaman Posts</h1>
 
 @foreach($posts as $post)
-    <article class="m-8">
-    <h2 class="my-2 underline"><a href="/posts/{{ $post->slug }}">{{$post->title }}</a></h2>
-    <h5 class="my-2 font-bold">By: {{$post ["author"] }}</h5>
-    <p>{{ $post->excerpt }}</p>
+    <article class="m-8 border-b-4 border-500">
+    <h2 class="my-2"><a href="/posts/{{ $post->slug }}">{{$post->title }}</a></h2>
+        <p class="my-4 text-blue-600 visited:text-purple-600">By. <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="text-blue-600 visited:text-purple-600" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+    <p class="my-4">{{ $post->excerpt }}</p>
+
+        <a class="border-none text-blue-600 visited:text-purple-600" href="/posts/{{ $post->slug }}">Read More</a>
+
     </article>
 @endforeach
 

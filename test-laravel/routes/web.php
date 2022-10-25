@@ -5,6 +5,7 @@ use App\Models\Post;
 use App\Http\Controllers\PostController;
 
 use App\Models\Category;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,12 @@ Route::get('/categories/{category:slug}', function (\App\Models\Category $catego
         'title' => $category->name,
         'posts' => $category->posts,
         'category' => $category->name,
+    ]);
+});
+
+Route::get('/authors/{author:username}', function (\App\Models\User $author) {
+    return view('posts', [
+        'title' => $author->name,
+        'posts' => $author->posts,
     ]);
 });
