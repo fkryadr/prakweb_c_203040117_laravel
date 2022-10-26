@@ -3,7 +3,7 @@
 
 @section('container')
 
-    <h1 class="font-bold">Ini Halaman Posts</h1>
+    <h1 class="font-bold">{{ $title }}</h1>
 
 @foreach($posts as $post)
     <article class="m-8 border-b-4 border-500">
