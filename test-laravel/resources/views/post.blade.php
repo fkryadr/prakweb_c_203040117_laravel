@@ -13,7 +13,7 @@
                         <img src="https://source.unsplash.com/100x100/?portrait" alt="" class="w-10 h-10 rounded-full dark:bg-gray-500">
                         <div bis_skin_checked="1">
                             <h3 class="text-sm font-medium">{{ $post->author->name }}</h3>
-                            <p><small>in <a class="text-blue-600 visited:text-purple-600" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></small></p>
+                            <p><small>in <a class="text-blue-600 visited:text-purple-600" href="/blog?category={{ $post->category->slug }}">{{ $post->category->name }}</a></small></p>
                         </div>
                     </div>
                 </article>
@@ -22,7 +22,7 @@
     </div>
 
 
-    <a class="underline bottom-10" href="/blog">Kembali</a>
+    <a class="text-blue-600 visited:text-purple-600 underline" href="/blog">Back to Posts</a>
 @endsection
 
 

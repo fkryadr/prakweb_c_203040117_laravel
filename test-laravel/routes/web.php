@@ -45,16 +45,4 @@ route::get('categories', function () {
     ]);
 });
 
-Route::get('/categories/{category:slug}', function (\App\Models\Category $category) {
-    return view('posts', [
-        'title' => "Post By Category : $category->name",
-        'posts' => $category->posts->load('category', 'author')
-    ]);
-});
 
-Route::get('/authors/{author:username}', function (\App\Models\User $author) {
-    return view('posts', [
-        'title' => "Post By Author : $author->name",
-        'posts' => $author->posts->load('category', 'author'),
-    ]);
-});

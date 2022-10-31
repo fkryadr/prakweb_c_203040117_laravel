@@ -9,6 +9,11 @@
 </head>
 <body>
 
+<div class="flex order-last">
+    <img src="https://img.icons8.com/ios-glyphs/60/000000/moon-symbol.png"/>
+    <img src="https://img.icons8.com/ios-glyphs/60/000000/summer.png"/>
+</div>
+
 <style>
 
 </style>
