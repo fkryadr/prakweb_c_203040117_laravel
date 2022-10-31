@@ -2,25 +2,25 @@
 
 @section('container')
 
-    <div class="container">
+    <div class="p-4 container">
         <div class="row justify-center">
-            <div class="">
+            <div class="max-w-xls p-6 overflow-hidden rounded-lg shadow dark:bg-gray-900 dark:text-gray-100" bis_skin_checked="1">
+                <h2 class="text-4xl font-bold">{{ $post->title }}</h2>
+                <img class="my-4" src="https://source.unsplash.com/random/1200x400/?{{$post->category->name}}" alt="{{$post->category->name}}">
                 <article>
-                    <h2 class="font-bold my-4">{{ $post->title }}</h2>
-                    <p class="text-left my-4">By. <a class="text-blue-600 visited:text-purple-600" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="underline" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
-                    {!! $post->body !!}
+                    <p class="font-light text-xs mt-4 dark:text-gray-300">{!! $post->body !!}</p>
+                    <div class="flex items-center mt-8 space-x-4" bis_skin_checked="1">
+                        <img src="https://source.unsplash.com/100x100/?portrait" alt="" class="w-10 h-10 rounded-full dark:bg-gray-500">
+                        <div bis_skin_checked="1">
+                            <h3 class="text-sm font-medium">{{ $post->author->name }}</h3>
+                            <p><small>in <a class="text-blue-600 visited:text-purple-600" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></small></p>
+                        </div>
+                    </div>
                 </article>
             </div>
         </div>
     </div>
 
-
-
-    <article>
-    <h2 class="font-bold my-4">{{ $post->title }}</h2>
-    <p class="my-4">By. <a class="text-blue-600 visited:text-purple-600" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a class="underline" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
-        {!! $post->body !!}
-    </article>
 
     <a class="underline bottom-10" href="/blog">Kembali</a>
 @endsection
