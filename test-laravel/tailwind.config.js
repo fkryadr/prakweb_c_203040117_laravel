@@ -39,10 +39,9 @@ module.exports = {
           stone: colors.stone,
       },
       variants: {},
-      plugins: [],
     extend: {},
   },
-  plugins: [
+    plugins: [
+    ],
 
-  ],
 }

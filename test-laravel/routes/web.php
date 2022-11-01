@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
 use App\Http\Controllers\PostController;
 
 use App\Models\Category;
-use App\Models\User;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +45,7 @@ route::get('categories', function () {
     ]);
 });
 
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'index'])->name('register');
 
