@@ -3,9 +3,11 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   darkMode: 'class',
   content: [
+      './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
       "./resources/**/*.blade.php",
       "./resources/**/*.js",
       "./resources/**/*.vue",
+      './resources/views/**/*.blade.php',
 
   ],
   theme: {
@@ -42,6 +44,7 @@ module.exports = {
     extend: {},
   },
     plugins: [
+    require('@tailwindcss/forms'),
     ],
 
 }
