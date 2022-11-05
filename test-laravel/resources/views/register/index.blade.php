@@ -88,7 +88,7 @@
                                     </ul>
                                 </div>
                                 <button type="submit" class="mt-3 text-lg font-semibold
-            bg-gray-800 w-full text-white rounded-lg
+            dark:bg-blue-500 dark:text-gray-900 bg-blue-500 text-white w-full py-2 rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black">
                                     Register
                                 </button>

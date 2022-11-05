@@ -46,7 +46,11 @@ route::get('categories', function () {
 });
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'index']);
-Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'store']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'store'])->name('register.store');
+
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware('auth');
