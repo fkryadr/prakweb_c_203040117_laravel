@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
 use App\Models\Category;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\DashboardPostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,3 +57,5 @@ Route::get('/dashboard', function () {
         'title' => 'Dashboard'
     ]);
 });
+
+Route::resource('dashboard/posts', \App\Http\Controllers\DashboardPostController::class);
